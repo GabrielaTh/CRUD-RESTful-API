@@ -21,7 +21,7 @@ router.use(function(req, res,next){
 });
 
 //test route to make sure everything is working(accessed at GET http://localhost:8080/api)
- router.get('./route', function(req,res){
+ router.get('/', function(req,res){
      res.json({message : 'Yupii! Welcome to my api'});
  });
 
@@ -38,14 +38,23 @@ router.use(function(req, res,next){
      res.json({message : 'Bear created!'});
  });
 });
+router.route('/bears')
+.get(function(req, res) {
+    Bear.find(function(err, bears) {
+        if (err)
+            res.send(err);
+
+        res.json(bears);
+    });
+});
 
 //get all the bears
-router.route('/bears')
+router.route('/bears/:bear_id')
 .get(function(req,res){
-    Bear.find(function(err,bears){
+    Bear.findById(req.params.bear_id, function(err,bear){
         if (err)
         res.send(err)
-        res.json(bears);
+        res.json(bear);
     });
 });
 
@@ -75,7 +84,7 @@ router.route('/bears/:bear_id')
 
 
  //Register our routes
- app.use('./route/api', router);
+ app.use('/api', router);
 
  //Start the server
  app.listen(port);
@@ -87,5 +96,5 @@ router.route('/bears/:bear_id')
 
  //
 
- var Bear = require('.models/bear');
+ var Bear = require('../models/bear');
 
