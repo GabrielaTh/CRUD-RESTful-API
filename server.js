@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 var router = express.Router();
 var mongoose = require('mongoose');
 mongoose.connect(process.env.data_base,{useNewUrlParser:true});
+var Bear = require('./models/bear');
 //local
 // let dbUrl = 'mongodb://127.0.0.1:27017/mydata1';
 // mongoose.connect(dbUrl,{useNewUrlParser:true});

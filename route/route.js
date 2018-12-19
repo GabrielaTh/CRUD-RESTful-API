@@ -1,6 +1,6 @@
 
 
-module.exports = (app,router) => {
+module.exports = (app,router,Bear) => {
 router.use(function(req, res,next){
     console.log('Something is happening.');
     next(); 
