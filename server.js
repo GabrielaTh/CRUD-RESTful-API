@@ -17,10 +17,9 @@ require("./route/route")(app,router);
 
 app.use('/api', router);
 
+const port = process.env.PORT || 80;
 app.listen(port);
 console.log('start' + port);
-const port = process.env.PORT || 80;
-
 //local
 // const port = 8080; 
 // app.listen(port);
