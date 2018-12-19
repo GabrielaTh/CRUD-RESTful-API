@@ -92,7 +92,7 @@ router.route('/bears/:bear_id')
 
  //Creando base de datos con mongoose
  var mongoose = require('mongoose');
- mongoose.connect('mongodb://localhost:27017/mydata1',{useNewUrlParser:true}); // connect to our database
+ mongoose.connect(env.process.data_base,{useNewUrlParser:true}); // connect to our database
 
  //
 
