@@ -17,7 +17,7 @@ require("./route/route")(app,router);
 
 app.use('/api', router);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 80;
 
 //local
 // const port = 8080; 
