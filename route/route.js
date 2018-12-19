@@ -1,13 +1,12 @@
 
 
 module.exports = (app,router) => {
-
 router.use(function(req, res,next){
     console.log('Something is happening.');
     next(); 
 });
 
-router.get('/', function(req,res){
+router.get('/api', function(req,res){
     res.json({message : 'Yupii! Welcome to my api'});
 });
 
