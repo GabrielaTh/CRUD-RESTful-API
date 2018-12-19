@@ -6,7 +6,7 @@ router.use(function(req, res,next){
     next(); 
 });
 
-router.get('/api', function(req,res){
+router.get('/', function(req,res){
     res.json({message : 'Yupii! Welcome to my api'});
 });
 
@@ -64,5 +64,5 @@ router.route('/bears')
            res.json({message: 'Successfully deleted'});
        });
    });
-}
+};
 

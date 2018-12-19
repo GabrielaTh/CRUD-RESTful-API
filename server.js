@@ -14,8 +14,8 @@ var Bear = require('./models/bear');
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use(bodyParser.json());
 require("./route/route")(app,router);
-
 app.use('/api', router);
+app.listen(port);
 
 const port = process.env.PORT || 80;
 
