@@ -13,7 +13,7 @@ var Bear = require('./models/bear');
 //this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use(bodyParser.json());
-require("./route/route")(app,router);
+require("./route/route")(app,router,Bear);
 
 app.use('/api', router);
 
